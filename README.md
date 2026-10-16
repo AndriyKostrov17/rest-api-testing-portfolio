@@ -49,7 +49,7 @@ These are separate environments used for different learning objectives.
 - No access to the WordPress project's private database.
 - No claim of commercial backend QA experience based on this learning project.
 - No production load or stress testing performed as part of this project.
-- Results will reflect only the checks actually executed and documented.
+- Only checks actually executed and documented are reported as test results.
 
 ## Project Status
 
