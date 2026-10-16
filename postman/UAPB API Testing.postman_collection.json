@@ -1,0 +1,2021 @@
+{
+  "info": {
+    "_postman_id": "26705d79-2028-4a17-9322-729a98934c4d",
+    "name": "UAPB API Testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51054371",
+    "_collection_link": "https://go.postman.co/collection/51054371-26705d79-2028-4a17-9322-729a98934c4d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01. API Discovery",
+      "item": [
+        {
+          "name": "01.01 API Root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "01.02 Pages List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "02. Pages",
+      "item": [
+        {
+          "name": "02.01 Get Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.02 Get Page — Non-existent ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/999999",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.03 Get Page — Invalid ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/abc",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "abc"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.04 Get Pages — Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=2",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.05 Get Pages — Per Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.06 Get Pages — Search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?search=Provost",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Provost"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.07 Get Pages — Search — No Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?search=XYZNONEXISTENT123",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "XYZNONEXISTENT123"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.08 Get Pages — Parent",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?parent=28339",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "parent",
+                  "value": "28339"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "02.09 Get Pages — Parent — No Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?parent=999999",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "parent",
+                  "value": "999999"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03. Posts / Search",
+      "item": [
+        {
+          "name": "03.01 Get Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/posts",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03.02 Get Posts — Per Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/posts?per_page=5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03.03 Search — Provost",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/search?search=Provost",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Provost"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "03.04 Search — No Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/search?search=XYZNONEXISTENT123",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "XYZNONEXISTENT123"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04. Media",
+      "item": [
+        {
+          "name": "04.01 Get Media",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.02 Get Media — Specific ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media/28483",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media",
+                "28483"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.03 Get Media — Non-existent ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media/999999",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.04 Get Media — Per Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media?per_page=5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.05 Get Media — Search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media?search=Steinway",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Steinway"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.06 Get Media — Search — No Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media?search=XYZNONEXISTENT123",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "XYZNONEXISTENT123"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media?media_type=image",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "media_type",
+                  "value": "image"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.08 Get Media — Media Type PDF",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media?media_type=application/pdf",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "media_type",
+                  "value": "application/pdf"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "04.09 Get Media — Media Type — Application",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/media?media_type=application",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "media"
+              ],
+              "query": [
+                {
+                  "key": "media_type",
+                  "value": "application"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05. Search",
+      "item": [
+        {
+          "name": "05.01. Search University",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/search?search=University",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "University"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.02. Get by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/news_preview/28465",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "news_preview",
+                "28465"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.03 — список News Preview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/news_preview",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "news_preview"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.04 — News Preview Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/news_preview?page=2",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "news_preview"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.05 Get News Preview — Per Page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/news_preview?per_page=5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "news_preview"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.06 — Search News Preview",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/news_preview?search=Homecoming",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "news_preview"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Homecoming"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "05.07 Search без результатів",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/news_preview?search=XYZNONEXISTENT123",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "news_preview"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "XYZNONEXISTENT123"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "06. Taxonomies / Categories",
+      "item": [
+        {
+          "name": "06.01 — API Root: перевіряємо namespaces",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.02 — Categories List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.03 — Get Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories/9",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories",
+                "9"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.04 — Category з неіснуючим ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories/999999",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.05 — Category Search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories?search=agri",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "agri"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.06 — Posts by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/posts?categories=9",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "categories",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.07 — Category Parent",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories?parent=9",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories"
+              ],
+              "query": [
+                {
+                  "key": "parent",
+                  "value": "9"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "06.08 — Search Category: No Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories?search=XYZNONEXISTENT123",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "XYZNONEXISTENT123"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07. Parameters & Validation",
+      "item": [
+        {
+          "name": "07.01 — Invalid per_page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=abc",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "abc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.02 — Boundary per_page Value (0)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=0",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.03 — Boundary per_page Value (100)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.04 — per_page Above Maximum",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=101",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "101"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.05 — Invalid page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=abc",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "abc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.06 — page=0",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=0",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.07 — Boundary page Value (1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=1",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.08 — page Beyond Available Pages",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=55",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "55"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.09 — Negative page Value (-1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=-1",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "-1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.10 — Empty search Parameter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?search=",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.11 — Search with Special Characters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?search=%40%23%24",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "%40%23%24"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.12 — Search with Very Long Value",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?search=AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.13 — Unknown Query Parameter",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?test=123",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "test",
+                  "value": "123"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.14 — Multiple Parameters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=2&per_page=5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "2"
+                },
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "07.15 — Conflicting Parameters",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=999&per_page=5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "999"
+                },
+                {
+                  "key": "per_page",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "09. Security Basics",
+      "item": [
+        {
+          "name": "09.01 Get Page Without Authorization",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.02 — перевірка Authorization header",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearer_token_07u8}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.03 — неправильний токен на захищеному endpoint",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearer_token_07u8}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/users/me",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.04 — порожній токен",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer"
+              }
+            ],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/users/me",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "users",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.05 — перевірка HTTP Headers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.06 — перевірка зайвих/чутливих даних у response",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.07 — перевірка доступу до інформації про автора",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/users/5",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "users",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.08 — перевірка CORS",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Origin",
+                "value": "https://example.com"
+              }
+            ],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.09 — доступ до неіснуючого користувача",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/users/999999",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "users",
+                "999999"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "09.10 — фінальна security-перевірка",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/users",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "10. Performance Basics",
+      "item": [
+        {
+          "name": "10.01 — базовий Response Time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages/28346",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages",
+                "28346"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.02 — порівняння Response Time для різних обсягів даних",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.03 — перевірка response size",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.04 — перевірка великого response",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.05 — перевірка Search Performance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?search=University&per_page=10",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "University"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.06 — перевірка впливу per_page на response time",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.07 — перевірка timeout / дуже великого response",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100&page=6",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                },
+                {
+                  "key": "page",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.08 — перевірка стабільності цього endpoint",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?per_page=100&page=6",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "pages"
+              ],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "100"
+                },
+                {
+                  "key": "page",
+                  "value": "6"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "10.09 — фінальна перевірка Performance",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://uapb.edu/wp-json/wp/v2/categories",
+              "protocol": "https",
+              "host": [
+                "uapb",
+                "edu"
+              ],
+              "path": [
+                "wp-json",
+                "wp",
+                "v2",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "bearer_token_07u8",
+      "secret": true
+    }
+  ]
+}
