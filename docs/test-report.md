@@ -8,9 +8,12 @@
 
 ## 2. Executed Checks
 
-| API | Request | Actual Result | Outcome |
-|---|---|---|---|
-| Swagger Petstore | `GET /api/v3/pet/123` | HTTP 404 Not Found; response body: `Pet not found` | Observed |
+| API                | Request                            | Actual Result                                                             | Outcome  |
+| ------------------ | ---------------------------------- | ------------------------------------------------------------------------- | -------- |
+| WordPress REST API | `GET /wp-json/wp/v2/pages?page=1`  | HTTP 200 OK; pagination headers: `X-WP-Total: 525`, `X-WP-TotalPages: 53` | Observed |
+| WordPress REST API | `GET /wp-json/wp/v2/pages?page=2`  | HTTP 200 OK; returned page IDs differ from page 1                         | Observed |
+| WordPress REST API | `GET /wp-json/wp/v2/pages?page=54` | HTTP 400 Bad Request; code: `rest_post_invalid_page_number`               | Observed |
+| Swagger Petstore   | `GET /api/v3/pet/123`              | HTTP 404 Not Found; response body: `Pet not found`                        | Observed |
 
 ## 3. Findings
 
