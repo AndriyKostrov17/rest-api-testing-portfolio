@@ -563,7 +563,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "04.07 Get Media — Images Only",
           "request": {
             "method": "GET",
             "header": [],
@@ -1222,7 +1222,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=1",
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=54",
               "protocol": "https",
               "host": [
                 "uapb",
@@ -1237,7 +1237,7 @@
               "query": [
                 {
                   "key": "page",
-                  "value": "1"
+                  "value": "54"
                 }
               ]
             }
@@ -1250,7 +1250,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=55",
+              "raw": "https://uapb.edu/wp-json/wp/v2/pages?page=54",
               "protocol": "https",
               "host": [
                 "uapb",
@@ -1265,7 +1265,7 @@
               "query": [
                 {
                   "key": "page",
-                  "value": "55"
+                  "value": "54"
                 }
               ]
             }
