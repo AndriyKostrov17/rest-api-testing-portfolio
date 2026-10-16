@@ -1,33 +1,29 @@
-# Postman API Testing
+# Postman Collection
 
-## Objective
+## Overview
 
-This directory contains Postman collections and supporting files used for manual REST API testing.
+This directory contains the exported Postman collection `UAPB API Testing.postman_collection.json`.
 
-## Planned Test Coverage
+The collection organizes REST API requests used for API exploration and testing practice.
 
-- Sending GET requests to API endpoints
-- Validating HTTP status codes
-- Checking JSON response structure and data types
-- Testing path and query parameters
-- Verifying positive and negative scenarios
-- Recording test results
+## How to Import
 
-## Collections
+1. Download `UAPB API Testing.postman_collection.json`.
+2. Open Postman.
+3. Click **Import**.
+4. Select the downloaded JSON file.
+5. Confirm the import and review the collection folders and requests.
 
-Postman collection files will be added after the requests have been reviewed and verified.
+## Testing Focus
 
-| Collection | Purpose | Status |
-|---|---|---|
-| WordPress REST API | Explore pages, posts, search, and pagination | To be added |
-| Swagger Petstore | Practice endpoint and response validation | To be added |
+- HTTP methods and status codes
+- Request parameters
+- JSON response inspection
+- Positive and negative scenarios
+- API behavior and response validation
 
-## Execution
+## Scope and Limitations
 
-Collections should be imported into Postman and executed against the corresponding API environment.
+The collection is a learning portfolio artifact. Its presence does not mean every request has been executed or that every scenario has passed.
 
-Actual results must be recorded only after requests have been run. No credentials, access tokens, or other secrets should be committed to the repository.
-
-## Limitations
-
-The WordPress REST API and Swagger Petstore are separate environments. Their requests and results must be documented independently.
+Record actual outcomes only after executing the relevant requests and inspecting their responses.
