@@ -6,12 +6,12 @@ Define positive, negative, and parameter-validation scenarios for REST API testi
 
 ## 1. WordPress REST API
 
-| ID | Scenario | Expected Result | Status |
-|---|---|---|---|
+| **ID** | **Scenario** | **Expected Result** | **Status** |
+| ------ | ----------------------------------------- | --------------------------------------------------------------------- | ---------- |
 | WP-01 | Retrieve published posts | HTTP 200 and a JSON response | Planned |
-| WP-02 | Retrieve pages | HTTP 200 and a JSON response | Planned |
-| WP-03 | Retrieve posts with pagination parameters | Response reflects the requested pagination settings | Planned |
-| WP-04 | Send an invalid pagination value | API returns an appropriate client-error response or validation result | Planned |
+| WP-02 | Retrieve pages | HTTP 200 and a JSON response | Executed: HTTP 200 received |
+| WP-03 | Retrieve pages using pagination parameters | Page 1 and page 2 return different page records; pagination headers provide total items and pages | Executed: HTTP 200 received for pages 1 and 2 |
+| WP-04 | Request a page beyond the available pagination range | API returns HTTP 400 with error code `rest_post_invalid_page_number` | Executed: HTTP 400 received for page 54; 53 pages available |
 
 ## 2. Swagger Petstore API
 
